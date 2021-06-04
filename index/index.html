@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find My Weather</title>
+    <script
+      src="https://kit.fontawesome.com/e2e34c9be1.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="src/styles.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="search-engine">
+      <form id="city-input">
+        <input
+          type="text"
+          placeholder="Enter a City"
+          autcomplete="off"
+          autofocus="on"
+          id="city-text-input"
+        />
+        <input type="submit" value="Search" />
+      </form>
+      <button>Current Location</button>
+      <br />
+      <i class="fas fa-cloud-sun"></i>
+      <div class="current-weather">
+        <span class="temperature" id="temperature">32</span>
+        <span class="units"
+          ><a href="#" id="celsius">°C</a>|<a href="#" id="fahrenheit"
+            >°F</a
+          ></span
+        >
+      </div>
+    </div>
+    <h2 id="city">MILWAUKEE, WISCONSIN, UNITED STATES</h2>
+    <h3>Friday, June 4, 2021 | 10:41AM</h3>
+    <h4>
+      <span id="description">Partly Cloudy</span> |
+      <span>Wind Speed: <span id="wind"></span> km/H</span> |
+      <span>Precipitation: 2%</span>
+    </h4>
+    <script src="src/index.js"></script>
+  </body>
+</html>
