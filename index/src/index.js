@@ -45,7 +45,8 @@ function displayTemperature(response) {
   let windElement = document.querySelector("#wind");
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
-  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  celsiusTemp = response.data.main.temp;
+  temperatureElement.innerHTML = Math.round(celsiusTemp);
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
   windElement.innerHTML = Math.round(response.data.wind.speed);
@@ -69,7 +70,28 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-search("Milwaukee");
+function displayFahrenheitTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
+}
+
+function displayCelsiusTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemp);
+}
+
+let celsiusTemp = null;
 
 let form = document.querySelector("#city-input");
 form.addEventListener("submit", handleSubmit);
+
+let fahrenheit = document.querySelector("#fahrenheit");
+fahrenheit.addEventListener("click", displayFahrenheitTemp);
+
+let celsius = document.querySelector("#celsius");
+celsius.addEventListener("click", displayCelsiusTemp);
+
+search("Milwaukee");
