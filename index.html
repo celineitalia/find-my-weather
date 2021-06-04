@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Find My Weather</title>
     <link rel="stylesheet" href="src/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
@@ -38,6 +44,18 @@
       <span>Wind Speed: <span id="wind"></span> km/H</span> |
       <span>Precipitation: 2%</span>
     </h4>
+    <div class="weather-forecast">
+      <div class="row">
+        <div class="col-2">
+          <div class="forecast-date">Thu</div>
+          <img src="http://openweathermap.org/img/wn/02d@2x.png" alt="" />
+          <div class="forcast-temp">
+            <span class="forecast-high">18°</span
+            ><span class="forecast-low">12°</span>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="src/index.js"></script>
   </body>
 </html>
